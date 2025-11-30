@@ -1,6 +1,6 @@
 ---
 layout: default
-title: M4Bot - Professional Audiobook Converter for Mac
+title: M4Bot - Audiobook Converter for Mac
 description: Convert MP3, WAV, and M4A files to M4B format with chapters and metadata. 100% local processing, no data collection.
 ---
 
@@ -127,6 +127,13 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         box-shadow: 0 4px 16px var(--shadow);
     }
     
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 16px;
+        color: var(--accent-color);
+    }
+    
     .feature-card h3 {
         font-size: 20px;
         font-weight: 600;
@@ -139,34 +146,11 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         font-size: 15px;
     }
     
-    .privacy-section {
-        background: linear-gradient(135deg, var(--card-bg) 0%, var(--code-bg) 100%);
-        padding: 40px 0;
-        border-radius: 12px;
-        margin: 50px 0;
-        text-align: center;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 2px 8px var(--shadow);
-    }
-    
-    .privacy-section h2 {
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 12px;
-    }
-    
-    .privacy-section p {
-        font-size: 16px;
-        color: var(--secondary-text);
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .how-it-works {
+    .screenshots-section {
         padding: 50px 0;
     }
     
-    .how-it-works h2 {
+    .screenshots-section h2 {
         font-size: 32px;
         font-weight: 600;
         text-align: center;
@@ -174,49 +158,32 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         letter-spacing: -0.01em;
     }
     
-    .steps {
-        max-width: 700px;
-        margin: 0 auto;
+    .screenshots-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: 32px;
     }
     
-    .step {
-        margin-bottom: 24px;
-        padding-left: 40px;
-        position: relative;
+    .screenshot-item {
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 2px 8px var(--shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
-    .step::before {
-        content: counter(step-counter);
-        counter-increment: step-counter;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 32px;
-        height: 32px;
-        background-color: var(--accent-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        font-size: 16px;
+    .screenshot-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px var(--shadow);
     }
     
-    .steps {
-        counter-reset: step-counter;
-    }
-    
-    .step h3 {
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 6px;
-    }
-    
-    .step p {
-        color: var(--secondary-text);
-        line-height: 1.5;
-        font-size: 15px;
+    .screenshot-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
     }
     
     @media (max-width: 768px) {
@@ -232,13 +199,11 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
             font-size: 18px;
         }
         
-        .features,
-        .how-it-works {
+        .features {
             padding: 40px 0;
         }
         
-        .features h2,
-        .how-it-works h2 {
+        .features h2 {
             font-size: 28px;
             margin-bottom: 24px;
         }
@@ -248,9 +213,13 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
             gap: 16px;
         }
         
-        .privacy-section {
-            padding: 30px 0;
-            margin: 40px 0;
+        .screenshots-section {
+            padding: 40px 0;
+        }
+        
+        .screenshots-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
     }
 </style>
@@ -261,7 +230,7 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         <img src="{{ site.baseurl }}/dark.png" alt="M4Bot" class="hero-icon hero-icon-dark">
     </div>
     <h1>M4Bot</h1>
-    <p class="subtitle">Professional Audiobook Converter for Mac</p>
+    <p class="subtitle">Audiobook Converter for Mac</p>
     <p style="font-size: 16px; color: var(--secondary-text); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
         Convert MP3, WAV, and M4A files to M4B format with automatic chapter creation and metadata management. All processing happens locally on your Mac. Optimized for Apple Silicon for maximum speed.
     </p>
@@ -274,63 +243,80 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
     <h2>Key Features</h2>
     <div class="features-grid">
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+            </svg>
             <h3>Convert Audio Formats</h3>
             <p>Convert MP3 to M4B, WAV to M4B, and M4A to M4B. Merge multiple audio files into a single audiobook with high-quality AAC encoding.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
             <h3>Automatic Chapters</h3>
             <p>Chapters are automatically created from your audio files. Edit chapter titles, reorder files, and customize metadata before conversion.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+            </svg>
             <h3>Metadata Management</h3>
             <p>Add book information including title, author, narrator, year, and cover art. Metadata is automatically extracted from source files.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"/>
+            </svg>
             <h3>Audio Quality Control</h3>
             <p>Customize bitrate (64-320 kbps), sample rate (44.1/48 kHz), and channel layout (mono/stereo) to match your preferences.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
             <h3>100% Local Processing</h3>
             <p>All conversion happens on your Mac. Your files never leave your computer. No cloud uploads, no data collection, complete privacy.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
             <h3>Apple Books Compatible</h3>
             <p>Created M4B files work perfectly with Apple Books, iTunes, and all major audiobook players with full chapter navigation support.</p>
         </div>
         <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <path d="M9 9h6v6H9z"/>
+                <path d="M9 3v6M15 3v6M9 15v6M15 15v6M3 9h6M15 9h6M3 15h6M15 15h6"/>
+            </svg>
             <h3>Apple Silicon Optimized</h3>
             <p>M4Bot is designed exclusively for Macs with Apple Silicon processors, ensuring high-speed conversion and optimal performance for all your audiobook processing needs.</p>
         </div>
     </div>
 </section>
 
-<section class="privacy-section">
-    <h2>Privacy First</h2>
-    <p>
-        M4Bot processes all audio files locally on your Mac. We don't collect any data, 
-        don't use analytics, and don't send anything to external servers. Your files and 
-        privacy are completely protected.
-    </p>
-</section>
-
-<section class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-        <div class="step">
-            <h3>Input Analysis</h3>
-            <p>M4Bot loads your audio files and reads their properties including duration, bitrate, and available metadata. It proposes reasonable defaults for chapter titles based on file names.</p>
+<section class="screenshots-section">
+    <h2>Screenshots</h2>
+    <div class="screenshots-grid">
+        <div class="screenshot-item">
+            <img src="{{ site.baseurl }}/screenshots/screenshot1.png" alt="M4Bot - Main Interface" loading="lazy">
         </div>
-        <div class="step">
-            <h3>Audio Processing</h3>
-            <p>The audio is decoded and re-encoded to AAC format with high quality. All processing happens locally on your Mac for the best quality and performance.</p>
+        <div class="screenshot-item">
+            <img src="{{ site.baseurl }}/screenshots/screenshot2.png" alt="M4Bot - Chapters Management" loading="lazy">
         </div>
-        <div class="step">
-            <h3>Chapters & Metadata</h3>
-            <p>Chapters are generated from your audio files. Book metadata (title, author, narrator, year, cover artwork) is collected from the UI and source files.</p>
+        <div class="screenshot-item">
+            <img src="{{ site.baseurl }}/screenshots/screenshot3.png" alt="M4Bot - Metadata Settings" loading="lazy">
         </div>
-        <div class="step">
-            <h3>M4B Packaging</h3>
-            <p>The encoded audio, chapters, and optional cover artwork are packaged into an M4B container. The audio stream is preserved for maximum quality.</p>
+        <div class="screenshot-item">
+            <img src="{{ site.baseurl }}/screenshots/screenshot4.png" alt="M4Bot - Drag & Drop" loading="lazy">
         </div>
     </div>
 </section>
