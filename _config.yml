@@ -1,7 +1,7 @@
 title: M4Bot
 description: Professional audiobook converter for Mac. Convert MP3, WAV, and M4A files to M4B format with chapters and metadata.
-url: "" # Will be set automatically by GitHub Pages
-baseurl: "" # Empty for /docs folder deployment
+url: "https://c0dedbear.github.io"
+baseurl: "/M4Bot-support"
 
 # Build settings
 markdown: kramdown

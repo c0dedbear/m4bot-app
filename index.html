@@ -74,12 +74,12 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
     .cta-button:hover {
         opacity: 0.9;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
     }
     
     @media (prefers-color-scheme: dark) {
         .cta-button:hover {
-            box-shadow: 0 4px 12px rgba(10, 132, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(129, 140, 248, 0.4);
         }
     }
     
@@ -187,7 +187,7 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         top: 0;
         width: 32px;
         height: 32px;
-        background-color: var(--accent-color);
+        background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
         color: white;
         border-radius: 50%;
         display: flex;
@@ -255,8 +255,8 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
 
 <div class="hero">
     <div class="hero-icon-container">
-        <img src="{{ '/icon.png' | relative_url }}" alt="M4Bot" class="hero-icon hero-icon-light">
-        <img src="{{ '/dark.png' | relative_url }}" alt="M4Bot" class="hero-icon hero-icon-dark">
+        <img src="{{ site.baseurl }}/icon.png" alt="M4Bot" class="hero-icon hero-icon-light">
+        <img src="{{ site.baseurl }}/dark.png" alt="M4Bot" class="hero-icon hero-icon-dark">
     </div>
     <h1>M4Bot</h1>
     <p class="subtitle">Professional Audiobook Converter for Mac</p>

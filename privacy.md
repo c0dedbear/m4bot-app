@@ -2,6 +2,7 @@
 layout: default
 title: Privacy Policy
 description: M4Bot Privacy Policy - We don't collect any data. All processing happens locally on your Mac.
+permalink: /privacy/
 ---
 
 # Privacy Policy

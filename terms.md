@@ -2,6 +2,7 @@
 layout: default
 title: Terms of Service
 description: M4Bot Terms of Service and License Agreement
+permalink: /terms/
 ---
 
 # Terms of Service

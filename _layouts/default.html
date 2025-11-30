@@ -13,28 +13,28 @@
         }
         
         :root {
-            --bg-color: #fafafa;
-            --text-color: #1d1d1f;
-            --accent-color: #007aff;
-            --accent-hover: #0051d5;
-            --secondary-text: #6e6e73;
-            --border-color: #d2d2d7;
-            --code-bg: #f5f5f7;
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --secondary-text: #6b7280;
+            --border-color: #e5e7eb;
+            --code-bg: #f9fafb;
             --card-bg: #ffffff;
-            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow: rgba(0, 0, 0, 0.05);
         }
         
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #000000;
-                --text-color: #f5f5f7;
-                --accent-color: #0a84ff;
-                --accent-hover: #409cff;
-                --secondary-text: #86868b;
-                --border-color: #424245;
-                --code-bg: #1c1c1e;
-                --card-bg: #1c1c1e;
-                --shadow: rgba(0, 0, 0, 0.4);
+                --bg-color: #0f172a;
+                --text-color: #f1f5f9;
+                --accent-color: #818cf8;
+                --accent-hover: #a5b4fc;
+                --secondary-text: #94a3b8;
+                --border-color: #334155;
+                --code-bg: #1e293b;
+                --card-bg: #1e293b;
+                --shadow: rgba(0, 0, 0, 0.3);
             }
         }
         
@@ -252,14 +252,14 @@
         <div class="container">
             <nav>
                 <a href="{{ '/' | relative_url }}" class="logo">
-                    <img src="{{ '/icon.png' | relative_url }}" alt="M4Bot" class="logo-icon logo-icon-light">
-                    <img src="{{ '/dark.png' | relative_url }}" alt="M4Bot" class="logo-icon logo-icon-dark">
+                    <img src="{{ site.baseurl }}/icon.png" alt="M4Bot" class="logo-icon logo-icon-light">
+                    <img src="{{ site.baseurl }}/dark.png" alt="M4Bot" class="logo-icon logo-icon-dark">
                     {{ site.title }}
                 </a>
                 <ul class="nav-links">
                     <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                    <li><a href="{{ '/privacy' | relative_url }}">Privacy</a></li>
-                    <li><a href="{{ '/terms' | relative_url }}">Terms</a></li>
+                    <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+                    <li><a href="{{ '/terms/' | relative_url }}">Terms</a></li>
                 </ul>
             </nav>
         </div>
@@ -274,8 +274,8 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="{{ '/privacy' | relative_url }}">Privacy Policy</a>
-                <a href="{{ '/terms' | relative_url }}">Terms of Service</a>
+                <a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+                <a href="{{ '/terms/' | relative_url }}">Terms of Service</a>
             </div>
             <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
         </div>
