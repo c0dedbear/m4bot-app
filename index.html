@@ -146,40 +146,20 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
         font-size: 15px;
     }
     
-    .screenshots-section {
-        padding: 50px 0;
-    }
-    
-    .screenshots-section h2 {
-        font-size: 32px;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 32px;
-        letter-spacing: -0.01em;
-    }
-    
-    .screenshots-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-        margin-top: 32px;
-    }
-    
-    .screenshot-item {
-        border-radius: 12px;
+    .screenshot-card {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent;
         overflow: hidden;
-        background-color: var(--card-bg);
-        border: 1px solid var(--border-color);
-        box-shadow: 0 2px 8px var(--shadow);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
-    .screenshot-item:hover {
+    .screenshot-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 16px var(--shadow);
+        box-shadow: none;
     }
     
-    .screenshot-item img {
+    .screenshot-card img {
         width: 100%;
         height: auto;
         display: block;
@@ -213,14 +193,6 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
             gap: 16px;
         }
         
-        .screenshots-section {
-            padding: 40px 0;
-        }
-        
-        .screenshots-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
     }
 </style>
 
@@ -300,22 +272,16 @@ description: Convert MP3, WAV, and M4A files to M4B format with chapters and met
             <h3>Apple Silicon Optimized</h3>
             <p>M4Bot is designed exclusively for Macs with Apple Silicon processors, ensuring high-speed conversion and optimal performance for all your audiobook processing needs.</p>
         </div>
-    </div>
-</section>
-
-<section class="screenshots-section">
-    <h2>Screenshots</h2>
-    <div class="screenshots-grid">
-        <div class="screenshot-item">
+        <div class="feature-card screenshot-card">
             <img src="{{ site.baseurl }}/screenshots/screenshot1.png" alt="M4Bot - Main Interface" loading="lazy">
         </div>
-        <div class="screenshot-item">
+        <div class="feature-card screenshot-card">
             <img src="{{ site.baseurl }}/screenshots/screenshot2.png" alt="M4Bot - Chapters Management" loading="lazy">
         </div>
-        <div class="screenshot-item">
+        <div class="feature-card screenshot-card">
             <img src="{{ site.baseurl }}/screenshots/screenshot3.png" alt="M4Bot - Metadata Settings" loading="lazy">
         </div>
-        <div class="screenshot-item">
+        <div class="feature-card screenshot-card">
             <img src="{{ site.baseurl }}/screenshots/screenshot4.png" alt="M4Bot - Drag & Drop" loading="lazy">
         </div>
     </div>
